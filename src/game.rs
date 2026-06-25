@@ -23,7 +23,7 @@ impl<'a> Default for Game<'a> {
         Self {
             exit: false,
             num_moles: GAME_DEFAULT_NUM_MOLES,
-            moles: generate_moles(GAME_DEFAULT_NUM_MOLES),
+            moles: init_moles(GAME_DEFAULT_NUM_MOLES),
             display: GameDisplay::new(),
         }
     }
@@ -38,7 +38,6 @@ impl<'a> Game<'a> {
 
     // initialize game
     pub fn init(&mut self) -> Result<(), std::io::Error> {
-        self.display.init();
         Ok(())
     }
 
@@ -46,6 +45,7 @@ impl<'a> Game<'a> {
         while !self.exit {
             self.display.draw()?;
             self.handle_events()?;
+            todo!();
         }
 
         Ok(())
@@ -53,8 +53,6 @@ impl<'a> Game<'a> {
 
     // shut down game
     pub fn quit(&mut self) -> Result<(), std::io::Error> {
-        self.display.restore();
-
         Ok(())
     }
 
@@ -81,15 +79,13 @@ impl<'a> Game<'a> {
 }
 
 // generate moles with default values
-fn generate_moles<'a>(num_moles: u32) -> Vec<Mole<'a>> {
+fn init_moles<'a>(num_moles: u32) -> Vec<Mole<'a>> {
     let mut moles = vec![];
 
     for _ in 0..num_moles {
         let this_mole = Mole::new();
         moles.push(this_mole);
     }
-
-    println!("Generated {num_moles} moles: {:#?}", moles);
 
     moles
 }

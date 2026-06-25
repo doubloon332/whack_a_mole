@@ -4,6 +4,8 @@ mod game;
 mod game_board;
 mod game_display;
 mod mole;
+mod renderer;
+mod renderer_draw;
 mod whacker;
 
 use game::Game;
