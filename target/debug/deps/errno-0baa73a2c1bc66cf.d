@@ -1,0 +1,6 @@
+/Users/eric/Projects/rust/whack_a_mole/target/debug/deps/errno-0baa73a2c1bc66cf.d: /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/lib.rs /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/unix.rs
+
+/Users/eric/Projects/rust/whack_a_mole/target/debug/deps/liberrno-0baa73a2c1bc66cf.rmeta: /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/lib.rs /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/unix.rs
+
+/Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/lib.rs:
+/Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/errno-0.3.14/src/unix.rs:
