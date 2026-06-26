@@ -3,20 +3,23 @@
 mod game;
 mod game_board;
 mod game_display;
+mod message_format;
 mod mole;
 mod renderer;
-mod renderer_draw;
 mod whacker;
 
+use tokio::sync::mpsc;
+use tokio::task;
+
 use game::Game;
+
+// enum PanelMessage {
+//     Message { panel_id: &str, val: &str },
+// }
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     let mut whackamole = Game::new();
-
-    whackamole.init()?;
     whackamole.run()?;
-    whackamole.quit()?;
-
     Ok(())
 }

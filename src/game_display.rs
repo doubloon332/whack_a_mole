@@ -9,10 +9,10 @@ const DEFAULT_DEBUG_TITLE: &str = "Debug";
 
 #[derive(Debug)]
 pub struct GameDisplay<'a> {
-    board_title: &'a str,         // title of the game board portion of the display
+    board_title: &'a str,  // title of the game board portion of the display
     status_title: &'a str, // title of the status area of the display for updates (eg Mole Whacked!)
     debug_title: &'a str,  // optional debug window
-    renderer: renderer::Renderer, // display renderer to handle panel updates & draws
+    pub renderer: renderer::Renderer, // display renderer to handle panel updates & draws
 }
 
 impl<'a> Default for GameDisplay<'a> {
@@ -32,7 +32,7 @@ impl<'a> GameDisplay<'a> {
     }
 
     pub fn draw(&mut self) -> std::io::Result<()> {
-        self.renderer.draw()?;
+        self.renderer.draw();
         Ok(())
     }
 }
