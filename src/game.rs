@@ -44,7 +44,10 @@ impl Game {
     pub async fn run(mut self) -> Result<(), std::io::Error> {
         for _ in 1..100 {
             self.channel_buffer.game_buffer.push(DisplayTextUpdate::Text(String::from("Hello\n")));
+            self.channel_buffer.game_buffer.push(DisplayTextUpdate::Text(String::from("yas bish\n")));
         }
+        
+        // create an event stream to handle keypresses
         let mut events = EventStream::new();
         while !self.exit {
             self.update_game_display().await;

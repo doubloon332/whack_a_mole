@@ -9,7 +9,6 @@ mod renderer;
 mod whacker;
 
 use tokio::sync::mpsc;
-use tokio::task;
 
 use ratatui;
 
@@ -24,8 +23,8 @@ async fn main() -> Result<(), std::io::Error> {
     // display panel - game
     let (display_game_tx, display_game_rx) = mpsc::channel(DISPLAY_CHANNEL_CAPACITY);
 
-    let mut game = Game::new(display_game_tx);
-    let mut renderer = Renderer::new(display_game_rx);
+    let game = Game::new(display_game_tx);
+    let renderer = Renderer::new(display_game_rx);
 
     let game_task = tokio::spawn(game.run());
     let renderer_task = tokio::spawn(renderer.run());
