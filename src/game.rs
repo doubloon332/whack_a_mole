@@ -1,91 +1,79 @@
 // Game - manages the game state, i.e. moles, whacker, gameboard, run loop, etc
 
-use crate::game_display::GameDisplay;
+
 use crate::message_format::DisplayTextUpdate;
 use crate::mole::Mole;
-use crate::renderer::Panels;
 
-use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
+use crossterm::event::{self, Event, EventStream, KeyCode, KeyEvent, KeyEventKind};
+use futures_util::StreamExt;
 use tokio::sync::mpsc;
 
 use std::io;
 
 const GAME_DEFAULT_NUM_MOLES: u32 = 4;
 // capacity of the mpsc channels used to update the display
-const DISPLAY_CHANNEL_CAPACITY: usize = 32;
 
 #[derive(Debug)]
-pub struct Game<'a> {
+pub struct Game {
     exit: bool,
     num_moles: u32,
-    moles: Vec<Mole<'a>>,
-    display: GameDisplay<'a>,
-    channel_buffer: ChannelBuffer,
+    moles: Vec<Mole>,
+    game_display_tx: mpsc::Sender<DisplayTextUpdate>,
+    pub channel_buffer: ChannelBuffer,
 }
 
 #[derive(Debug)]
 struct ChannelBuffer {
-    game_buffer: Vec<String>,
+    game_buffer: Vec<DisplayTextUpdate>,
 }
 
-impl<'a> Game<'a> {
+impl Game {
     // create a new game
-    pub fn new() -> Self {
+    pub fn new(game_tx: mpsc::Sender<DisplayTextUpdate>) -> Self {
         Self {
             exit: false,
             num_moles: GAME_DEFAULT_NUM_MOLES,
             moles: init_moles(GAME_DEFAULT_NUM_MOLES),
-            display: GameDisplay::new(),
+            game_display_tx: game_tx,
             channel_buffer: ChannelBuffer {
                 game_buffer: vec![],
             },
         }
     }
 
-    pub fn run(&mut self) -> Result<(), std::io::Error> {
-        while !self.exit {
-            // self.display.draw()?;
-            self.handle_events()?;
-            todo!();
+    pub async fn run(mut self) -> Result<(), std::io::Error> {
+        for _ in 1..100 {
+            self.channel_buffer.game_buffer.push(DisplayTextUpdate::Text(String::from("Hello\n")));
         }
+        let mut events = EventStream::new();
+        while !self.exit {
+            self.update_game_display().await;
 
-        Ok(())
-    }
-
-    async fn spawn_display_channels(&mut self) {
-        let _ = self.spawn_game_channel();
-    }
-
-    // channel for updating game display panel
-    async fn spawn_game_channel(&self) {
-        let (tx, rx) = mpsc::channel(DISPLAY_CHANNEL_CAPACITY);
-
-        let sender_task = tokio::spawn(self.run_game_text_send(tx));
-        let receiver_task = tokio::spawn(self.display.renderer.run_game_text_recv(rx));
-
-        let _ = tokio::join!(sender_task, receiver_task);
-    }
-
-    async fn run_game_text_send(&mut self, tx: mpsc::Sender<DisplayTextUpdate>) -> io::Result<()> {
-        while !(self.exit) {
-            if self.channel_buffer.game_buffer.len() > 0 {
-                for item in &self.channel_buffer.game_buffer {
-                    let msg = DisplayTextUpdate::Text(item.to_string());
-                    if tx.send(msg).await.is_err() {
-                        eprintln!("Game display receiver dropped, stopping");
-                        break;
-                    }
-                }
-                self.channel_buffer.game_buffer.clear();
+            match events.next().await {          // awaits cooperatively, no thread block
+                Some(Ok(event)) => self.handle_event(event),
+                Some(Err(e))    => eprintln!("input error: {e}"),
+                None            => break,         // stream ended
             }
         }
 
         Ok(())
     }
 
+    pub async fn update_game_display(&mut self) -> io::Result<()> {
+        if self.channel_buffer.game_buffer.len() > 0 {
+            for item in self.channel_buffer.game_buffer.drain(..) {
+                if self.game_display_tx.send(item).await.is_err() {
+                    eprintln!("Game display receiver dropped, stopping");
+                    break;
+                }
+            }
+        }
+        Ok(())
+    }
+
     // handle keypresses & any other events (from ratatui example code)
-    fn handle_events(&mut self) -> io::Result<()> {
-        match event::read()? {
+    fn handle_event(&mut self, event:Event) {
+        match event {
             // check that the event is a key press event as crossterm also emits
             // key release and repeat events on Windows.
             Event::Key(key_event) if key_event.kind == KeyEventKind::Press => {
@@ -93,7 +81,6 @@ impl<'a> Game<'a> {
             }
             _ => {}
         };
-        Ok(())
     }
 
     // handle keypresses (from ratatui example code)
@@ -106,7 +93,7 @@ impl<'a> Game<'a> {
 }
 
 // generate moles with default values
-fn init_moles<'a>(num_moles: u32) -> Vec<Mole<'a>> {
+fn init_moles<'a>(num_moles: u32) -> Vec<Mole> {
     let mut moles = vec![];
 
     for _ in 0..num_moles {
