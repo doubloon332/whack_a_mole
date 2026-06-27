@@ -31,7 +31,5 @@ async fn main() -> Result<(), std::io::Error> {
 
     let _ = tokio::join!(game_task, renderer_task);
 
-    ratatui::restore();
-
     Ok(())
 }

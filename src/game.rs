@@ -4,7 +4,7 @@
 use crate::message_format::DisplayTextUpdate;
 use crate::mole::Mole;
 
-use crossterm::event::{self, Event, EventStream, KeyCode, KeyEvent, KeyEventKind};
+use crossterm::event::{Event, EventStream, KeyCode, KeyEvent, KeyEventKind};
 use futures_util::StreamExt;
 use tokio::sync::mpsc;
 

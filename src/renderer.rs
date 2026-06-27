@@ -82,7 +82,13 @@ impl Default for Screen {
     }
 }
 
-impl<'a> Renderer {
+impl Drop for Renderer {
+    fn drop(&mut self) {
+        ratatui::restore();
+    }
+}   
+
+impl Renderer {
     // display setup - clear screen & set terminal
     pub fn new(game_rx: mpsc::Receiver<DisplayTextUpdate>) -> Self {
         Renderer {
