@@ -18,6 +18,8 @@ use tracing::{Level, debug, event};
 const TOP_PANEL_PERC: u16 = 70;
 const TOP_LEFT_PANEL_PERC: u16 = 60;
 
+const DEBUG_SCROLL_LINES: u16 = 15;
+
 #[derive(Debug)]
 // screen layout
 struct Screen {
@@ -107,8 +109,6 @@ impl Renderer {
     async fn recv_panel_updates(&mut self) -> std::io::Result<()> {
         // wait until the first message of a burst & park it
         while let Some(first) = self.render_rx.recv().await {
-            event!(Level::INFO, "Applying first message\n");
-            debug!("Applying first message {:#?}\n", &first);
             let mut exit = self.apply(first);
 
             // drain rest of queue
@@ -187,13 +187,25 @@ fn render(frame: &mut Frame, screen: &Screen) {
             PanelKind::Debug => screen_layout[1],
         };
 
-        let widget = Paragraph::new(panel.text.as_str()).block(
-            Block::new()
-                .borders(Borders::ALL)
-                .border_style(Style::default().fg(panel.border_color))
-                .title(panel.title.as_str())
-                .border_type(BorderType::Rounded),
-        );
+        // log panels follow their tail; the board renders from the top
+        let scroll_y = match panel.panel_kind {
+            PanelKind::Debug => {
+                let total_lines = panel.text.lines().count() as u16;
+                let inner_height = area.height.saturating_sub(2);
+                total_lines.saturating_sub(inner_height)
+            }
+            PanelKind::Game | PanelKind::Status => 0,
+        };
+
+        let widget = Paragraph::new(panel.text.as_str())
+            .scroll((DEBUG_SCROLL_LINES, 0))
+            .block(
+                Block::new()
+                    .borders(Borders::ALL)
+                    .border_style(Style::default().fg(panel.border_color))
+                    .title(panel.title.as_str())
+                    .border_type(BorderType::Rounded),
+            );
         frame.render_widget(widget, area);
     }
 }

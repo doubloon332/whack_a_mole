@@ -51,7 +51,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let game_task = tokio::spawn(game.run());
     let renderer_task = tokio::spawn(renderer.run());
 
-    let _ = tokio::join!(game_task, renderer_task);
+    let (game_res, renderer_res) = tokio::join!(game_task, renderer_task);
+
+    if let Err(e) = game_res {
+        eprintln!("Tokio task for Game failed: {e:?}");
+    }
+    if let Err(e) = renderer_res {
+        eprintln!("Tokio task for Renderer failed: {e:?}");
+    }
 
     Ok(())
 }

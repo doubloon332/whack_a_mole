@@ -7,10 +7,11 @@ use crossterm::event::{Event, EventStream, KeyCode, KeyEvent, KeyEventKind};
 use futures_util::StreamExt;
 use tokio::sync::mpsc;
 
+use tracing;
+
 use std::io;
 
 const GAME_DEFAULT_NUM_MOLES: u32 = 4;
-// capacity of the mpsc channels used to update the display
 
 #[derive(Debug)]
 pub struct Game {
@@ -34,6 +35,8 @@ impl Game {
     }
 
     pub async fn run(mut self) -> Result<(), io::Error> {
+        tracing::info!("game started");
+
         for _ in 1..100 {
             self.panel_update_buffer
                 .push(RenderMessage::Panel(PanelUpdate {
@@ -56,6 +59,8 @@ impl Game {
         let mut events = EventStream::new();
         while !self.exit {
             self.update_game_display().await?;
+
+            tracing::debug!("ldskljflksd");
 
             match events.next().await {
                 // awaits cooperatively, no thread block
