@@ -1,10 +1,36 @@
 // Message formats for cross-task communication
 
-use crate::renderer;
+#[derive(Debug)]
+pub enum RenderMessage {
+    Panel(PanelUpdate),
+    Shutdown,
+}
 
 #[derive(Debug)]
-// Format for telling the Renderer to update a panel's text
-pub enum DisplayTextUpdate {
-    Text(String),
-    Exit,
+pub struct Panel {
+    pub panel_kind: PanelKind,
+    pub title: String,
+    pub text: String,
+    pub border_color: String, // from ratatui::Color
+}
+
+#[derive(Debug)]
+pub struct PanelUpdate {
+    pub target: PanelKind,
+    pub op: PanelOp,
+}
+
+#[derive(Debug)]
+pub enum PanelOp {
+    Append(String),
+    Replace(String),
+    Clear,
+}
+
+// Shared understanding of panels for message routing
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum PanelKind {
+    Game,
+    Status,
+    Debug,
 }

@@ -1,0 +1,306 @@
+  [2m2026-06-28T00:43:38.506508Z[0m [35mTRACE[0m  [35mregistering event source with poller: token=Token(0), interests=READABLE[0m
+    [2;3mat[0m /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.508091Z[0m [35mTRACE[0m  [35mregistering event source with poller: token=Token(1), interests=READABLE[0m
+    [2;3mat[0m /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.512959Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.512994Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "registering event source with poller: token=Token(0), interests=READABLE",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.514882Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.514896Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.516805Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.516819Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.518771Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.518784Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Status,
+        op: Append(
+            "Gofer ofer here\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.521220Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.521241Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.524343Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.524360Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(10)
+
+  [2m2026-06-28T00:43:38.526860Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(4)
+
+  [2m2026-06-28T00:43:38.526887Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Status,
+        op: Append(
+            "Gofer ofer here\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(4)
+
+  [2m2026-06-28T00:43:38.530309Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(4)
+
+  [2m2026-06-28T00:43:38.530334Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(4)
+
+  [2m2026-06-28T00:43:38.533166Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.533187Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.536659Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:38.536680Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:44.005600Z[0m [32m INFO[0m  [32mApplying first message[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:43:44.005780Z[0m [34mDEBUG[0m  [34mApplying first message Shutdown[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(11)
+
+  [2m2026-06-28T00:44:24.665583Z[0m [35mTRACE[0m  [35mregistering event source with poller: token=Token(0), interests=READABLE[0m
+    [2;3mat[0m /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.665998Z[0m [35mTRACE[0m  [35mregistering event source with poller: token=Token(1), interests=READABLE[0m
+    [2;3mat[0m /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.668893Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.668930Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "registering event source with poller: token=Token(0), interests=READABLE\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.670715Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.670734Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.672606Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.672636Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.675458Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.675481Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Status,
+        op: Append(
+            "Gofer ofer here\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(6)
+
+  [2m2026-06-28T00:44:24.677577Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.677597Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.680386Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.680413Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Game,
+        op: Append(
+            "Hello\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.682326Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.682362Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.684459Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.684472Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Debug,
+        op: Append(
+            "Pro noblem\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(2)
+
+  [2m2026-06-28T00:44:24.686526Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.686539Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Status,
+        op: Append(
+            "Gofer ofer here\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.688640Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:24.688652Z[0m [34mDEBUG[0m  [34mApplying first message Panel(
+    PanelUpdate {
+        target: Status,
+        op: Append(
+            "Gofer ofer here\n",
+        ),
+    },
+)
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:33.780982Z[0m [32m INFO[0m  [32mApplying first message
+[0m
+    [2;3mat[0m src/renderer.rs:98 [2;3mon[0m ThreadId(5)
+
+  [2m2026-06-28T00:44:33.781312Z[0m [34mDEBUG[0m  [34mApplying first message Shutdown
+[0m
+    [2;3mat[0m src/renderer.rs:99 [2;3mon[0m ThreadId(5)
+

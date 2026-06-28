@@ -26,6 +26,6 @@ impl Default for Mole {
 
 impl Mole {
     pub fn new() -> Self {
-        Default::default()
+        Self::default()
     }
 }
