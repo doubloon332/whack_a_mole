@@ -40,6 +40,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // construct a subscriber registry to allow for layers (top level, debug panel output)
     let fmt_layer = tracing_subscriber::fmt::layer()
         .pretty()
+        .with_ansi(false)
         .with_file(true)
         .with_line_number(true)
         .with_thread_ids(true)
@@ -51,29 +52,26 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with(tracing_layer)
         .init(); // make this the global default
 
+    tracing::info!("*********** New Whack A Mole game run started ***********",);
+
     tracing::info!(
-        "{}: Started tracing with logging to {}",
-        Local::now(),
+        "Started tracing with logging to {}",
         [LOG_PATH, LOG_FILENAME].concat()
     );
-    tracing::info!(
-        "{}: Initialized game with {} moles",
-        Local::now(),
-        game.num_moles
-    );
+    tracing::info!("Initialized game with {} moles", game.num_moles);
 
     let game_task = tokio::spawn(game.run());
-    tracing::info!("{}: Spawned game task", Local::now());
+    tracing::info!("Spawned game task");
     let renderer_task = tokio::spawn(renderer.run());
-    tracing::info!("{}: Spawned renderer task", Local::now());
+    tracing::info!("Spawned renderer task");
 
     let (game_res, renderer_res) = tokio::join!(game_task, renderer_task);
 
     if let Err(e) = game_res {
-        tracing::error!("{}: Tokio task for Game failed: {e:?}", Local::now());
+        tracing::error!("Tokio task for Game failed: {e:?}");
     }
     if let Err(e) = renderer_res {
-        tracing::error!("{}: Tokio task for Renderer failed: {e:?}", Local::now());
+        tracing::error!("Tokio task for Renderer failed: {e:?}");
     }
 
     Ok(())

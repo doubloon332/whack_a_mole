@@ -11,10 +11,6 @@ use ratatui::{
     widgets::{Block, BorderType, Borders, Paragraph},
 };
 
-// use tracing::{Level, debug, event};
-
-use chrono::Local;
-
 // percentages to define all 3 panels (game, status, board)
 const TOP_PANEL_PERC: u16 = 70;
 const TOP_LEFT_PANEL_PERC: u16 = 60;
@@ -114,10 +110,7 @@ impl Renderer {
 
     // get updates from Game channel & apply to display
     async fn recv_panel_updates(&mut self) -> std::io::Result<()> {
-        tracing::info!(
-            "{}: Entering Renderer::recv_panel_updates() loop",
-            Local::now()
-        );
+        tracing::info!("Entering Renderer::recv_panel_updates() loop",);
         // park until a message arrives on any channel, or shutdown signal
         loop {
             tokio::select! {

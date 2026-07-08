@@ -5,6 +5,8 @@ use crate::message_format::{PanelKind, PanelOp, PanelUpdate, RenderMessage};
 use tokio::sync::mpsc;
 use tracing_subscriber::Layer;
 
+use chrono::Local;
+
 pub struct TracingLayer {
     event_tx: mpsc::UnboundedSender<RenderMessage>,
 }
@@ -31,7 +33,7 @@ where
 
         let msg = RenderMessage::Panel(PanelUpdate {
             target: PanelKind::Debug,
-            op: PanelOp::Append(visitor.message + "\n"),
+            op: PanelOp::Append(format!("{}: {}\n", Local::now().time(), visitor.message)),
         });
 
         let _ = self.event_tx.send(msg);
