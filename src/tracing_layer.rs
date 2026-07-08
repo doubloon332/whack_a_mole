@@ -6,11 +6,11 @@ use tokio::sync::mpsc;
 use tracing_subscriber::Layer;
 
 pub struct TracingLayer {
-    event_tx: mpsc::Sender<RenderMessage>,
+    event_tx: mpsc::UnboundedSender<RenderMessage>,
 }
 
 impl TracingLayer {
-    pub fn new(tx: mpsc::Sender<RenderMessage>) -> Self {
+    pub fn new(tx: mpsc::UnboundedSender<RenderMessage>) -> Self {
         Self { event_tx: tx }
     }
 }
@@ -34,7 +34,7 @@ where
             op: PanelOp::Append(visitor.message + "\n"),
         });
 
-        let _ = self.event_tx.try_send(msg);
+        let _ = self.event_tx.send(msg);
     }
 }
 

@@ -1,14 +1,15 @@
 // Game - manages the game state, i.e. moles, whacker, gameboard, run loop, etc
 
-use crate::message_format::{PanelKind, PanelOp, PanelUpdate, RenderMessage};
+use crate::message_format::RenderMessage;
 use crate::mole::Mole;
 
 use crossterm::event::{Event, EventStream, KeyCode, KeyEvent, KeyEventKind};
 use futures_util::StreamExt;
-use tokio::sync::mpsc;
+use tokio::sync::{mpsc, watch};
 
 use tracing;
 
+use chrono::Local;
 use std::io;
 
 const GAME_DEFAULT_NUM_MOLES: u32 = 4;
@@ -16,51 +17,33 @@ const GAME_DEFAULT_NUM_MOLES: u32 = 4;
 #[derive(Debug)]
 pub struct Game {
     exit: bool,
-    num_moles: u32,
+    pub num_moles: u32,
     moles: Vec<Mole>,
     render_tx: mpsc::Sender<RenderMessage>,
+    shutdown_tx: watch::Sender<bool>,
     panel_update_buffer: Vec<RenderMessage>,
 }
 
 impl Game {
     // create a new game
-    pub fn new(game_tx: mpsc::Sender<RenderMessage>) -> Self {
+    pub fn new(game_tx: mpsc::Sender<RenderMessage>, quit_tx: watch::Sender<bool>) -> Self {
         Self {
             exit: false,
             num_moles: GAME_DEFAULT_NUM_MOLES,
             moles: init_moles(GAME_DEFAULT_NUM_MOLES),
             render_tx: game_tx,
+            shutdown_tx: quit_tx,
             panel_update_buffer: vec![],
         }
     }
 
     pub async fn run(mut self) -> Result<(), io::Error> {
-        tracing::info!("game started");
-
-        for _ in 1..100 {
-            self.panel_update_buffer
-                .push(RenderMessage::Panel(PanelUpdate {
-                    target: PanelKind::Game,
-                    op: PanelOp::Append(String::from("Hello\n")),
-                }));
-            self.panel_update_buffer
-                .push(RenderMessage::Panel(PanelUpdate {
-                    target: PanelKind::Status,
-                    op: PanelOp::Append(String::from("Gofer ofer here\n")),
-                }));
-            self.panel_update_buffer
-                .push(RenderMessage::Panel(PanelUpdate {
-                    target: PanelKind::Debug,
-                    op: PanelOp::Append(String::from("Pro noblem\n")),
-                }));
-        }
+        tracing::info!("{}: Entered Game::run()", Local::now());
 
         // create an event stream to handle keypresses
         let mut events = EventStream::new();
         while !self.exit {
             self.update_game_display().await?;
-
-            tracing::debug!("ldskljflksd");
 
             match events.next().await {
                 // awaits cooperatively, no thread block
@@ -103,12 +86,12 @@ impl Game {
 
     fn shutdown(&mut self) {
         self.exit = true;
-        let quit_msg = RenderMessage::Shutdown;
-        self.render_tx.try_send(quit_msg);
+        let _ = self.shutdown_tx.send(true);
     }
 }
 
 // generate moles with default values
 fn init_moles(num_moles: u32) -> Vec<Mole> {
+    tracing::info!("{}: Generating {} moles", Local::now(), num_moles);
     (0..num_moles).map(|_| Mole::new()).collect()
 }

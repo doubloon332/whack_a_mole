@@ -2,8 +2,7 @@
 
 use crate::message_format::{PanelKind, PanelOp, RenderMessage};
 
-use tokio::sync::mpsc;
-use tokio::sync::mpsc::error::TryRecvError;
+use tokio::sync::{mpsc, watch};
 
 use ratatui::layout::{Constraint, Direction, Layout};
 use ratatui::style::{Color, Style};
@@ -12,13 +11,13 @@ use ratatui::{
     widgets::{Block, BorderType, Borders, Paragraph},
 };
 
-use tracing::{Level, debug, event};
+// use tracing::{Level, debug, event};
+
+use chrono::Local;
 
 // percentages to define all 3 panels (game, status, board)
 const TOP_PANEL_PERC: u16 = 70;
 const TOP_LEFT_PANEL_PERC: u16 = 60;
-
-const DEBUG_SCROLL_LINES: u16 = 15;
 
 #[derive(Debug)]
 // screen layout
@@ -87,14 +86,22 @@ pub struct Panel {
 pub struct Renderer {
     terminal: ratatui::DefaultTerminal, // terminal object with Backend generic
     render_rx: mpsc::Receiver<RenderMessage>,
+    trace_rx: mpsc::UnboundedReceiver<RenderMessage>,
+    shutdown_rx: watch::Receiver<bool>,
     screen: Screen,
 }
 impl Renderer {
     // display setup - clear screen & set terminal
-    pub fn new(game_rx: mpsc::Receiver<RenderMessage>) -> Self {
+    pub fn new(
+        game_rx: mpsc::Receiver<RenderMessage>,
+        deb_rx: mpsc::UnboundedReceiver<RenderMessage>,
+        quit_rx: watch::Receiver<bool>,
+    ) -> Self {
         Renderer {
             terminal: ratatui::init(),
             render_rx: game_rx,
+            trace_rx: deb_rx,
+            shutdown_rx: quit_rx,
             screen: Screen::new(),
         }
     }
@@ -107,33 +114,35 @@ impl Renderer {
 
     // get updates from Game channel & apply to display
     async fn recv_panel_updates(&mut self) -> std::io::Result<()> {
-        // wait until the first message of a burst & park it
-        while let Some(first) = self.render_rx.recv().await {
-            let mut exit = self.apply(first);
-
-            // drain rest of queue
-            loop {
-                match self.render_rx.try_recv() {
-                    Ok(msg) => exit |= self.apply(msg),
-                    Err(TryRecvError::Empty) => break,
-                    Err(TryRecvError::Disconnected) => {
-                        exit = true;
-                        break;
-                    }
-                }
+        tracing::info!(
+            "{}: Entering Renderer::recv_panel_updates() loop",
+            Local::now()
+        );
+        // park until a message arrives on any channel, or shutdown signal
+        loop {
+            tokio::select! {
+                _ = self.shutdown_rx.changed() => break,
+                Some(msg) = self.render_rx.recv() => { self.apply(msg) }
+                Some(msg) = self.trace_rx.recv() => { self.apply(msg) }
             }
+
+            // drain everything else in both queues
+            while let Ok(msg) = self.render_rx.try_recv() {
+                self.apply(msg);
+            }
+            while let Ok(msg) = self.trace_rx.try_recv() {
+                self.apply(msg);
+            }
+
+            // draw screen
             self.draw()?;
-            if exit {
-                break;
-            };
         }
         Ok(())
     }
 
     // apply the contents of a message to the screen (but don't draw)
-    fn apply(&mut self, msg: RenderMessage) -> bool {
+    fn apply(&mut self, msg: RenderMessage) {
         match msg {
-            RenderMessage::Shutdown => return true,
             RenderMessage::Panel(update) => {
                 if let Some(panel) = self.screen.panel_mut(update.target) {
                     match update.op {
@@ -144,7 +153,6 @@ impl Renderer {
                 }
             }
         }
-        false
     }
 
     // draw the current screen as supplied by render()
@@ -198,7 +206,7 @@ fn render(frame: &mut Frame, screen: &Screen) {
         };
 
         let widget = Paragraph::new(panel.text.as_str())
-            .scroll((DEBUG_SCROLL_LINES, 0))
+            .scroll((scroll_y, 0))
             .block(
                 Block::new()
                     .borders(Borders::ALL)

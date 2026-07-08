@@ -3,15 +3,6 @@
 #[derive(Debug)]
 pub enum RenderMessage {
     Panel(PanelUpdate),
-    Shutdown,
-}
-
-#[derive(Debug)]
-pub struct Panel {
-    pub panel_kind: PanelKind,
-    pub title: String,
-    pub text: String,
-    pub border_color: String, // from ratatui::Color
 }
 
 #[derive(Debug)]
