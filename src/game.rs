@@ -15,7 +15,7 @@ use std::io;
 use std::time::Duration;
 
 // game clock interval
-const TICK_DURATION_IN_MILLIS: u64 = 50;
+const GAME_TICK_DURATION_IN_MILLIS: u64 = 50;
 const GAME_DEFAULT_NUM_MOLES: u32 = 4;
 
 #[derive(Debug)]
@@ -34,7 +34,7 @@ impl Game {
     pub fn new(game_tx: mpsc::Sender<RenderMessage>, quit_tx: watch::Sender<bool>) -> Self {
         Self {
             exit: false,
-            tick_duration: TICK_DURATION_IN_MILLIS,
+            tick_duration: GAME_TICK_DURATION_IN_MILLIS,
             num_moles: GAME_DEFAULT_NUM_MOLES,
             moles: init_moles(GAME_DEFAULT_NUM_MOLES),
             render_tx: game_tx,

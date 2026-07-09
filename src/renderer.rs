@@ -1,15 +1,25 @@
 // module to handle ratatui message passing for UI layout, content updates, and screen draws
 
-use crate::message_format::{PanelKind, PanelOp, RenderMessage};
+use crate::game_display::GameDisplay;
+use crate::message_format::{
+    BoardSnapshot, GamePanelOp, PanelContent, PanelKind, PanelOps, RenderMessage, TextPanelOp,
+};
 
 use tokio::sync::{mpsc, watch};
+use tokio::time;
 
 use ratatui::layout::{Constraint, Direction, Layout};
 use ratatui::style::{Color, Style};
+use ratatui::widgets::canvas::Canvas;
 use ratatui::{
     Frame,
     widgets::{Block, BorderType, Borders, Paragraph},
 };
+
+use std::time::Duration;
+
+// a little less than 60fps
+const RENDER_TICK_DURATION_IN_MILLIS: u64 = 17;
 
 // percentages to define all 3 panels (game, status, board)
 const TOP_PANEL_PERC: u16 = 70;
@@ -39,19 +49,19 @@ impl Default for Screen {
                 Panel {
                     panel_kind: PanelKind::Game,
                     title: String::from("Garden"),
-                    text: String::from(""),
+                    content: PanelContent::Board(BoardSnapshot { moles: vec![] }),
                     border_color: Color::Green,
                 },
                 Panel {
                     panel_kind: PanelKind::Status,
                     title: String::from("Journal"),
-                    text: String::from(""),
+                    content: PanelContent::Text(String::from("")),
                     border_color: Color::Magenta,
                 },
                 Panel {
                     panel_kind: PanelKind::Debug,
                     title: String::from("Debug"),
-                    text: String::from(""),
+                    content: PanelContent::Text(String::from("")),
                     border_color: Color::Cyan,
                 },
             ],
@@ -64,7 +74,7 @@ impl Screen {
         Self::default()
     }
 
-    // accessor for getting a certain panel
+    // accessor for getting a certain panel for editing
     fn panel_mut(&mut self, kind: PanelKind) -> Option<&mut Panel> {
         self.panels.iter_mut().find(|p| p.panel_kind == kind)
     }
@@ -74,7 +84,7 @@ impl Screen {
 pub struct Panel {
     pub panel_kind: PanelKind,
     pub title: String,
-    pub text: String,
+    pub content: PanelContent,
     pub border_color: ratatui::style::Color, // from ratatui::Color
 }
 
@@ -84,6 +94,7 @@ pub struct Renderer {
     render_rx: mpsc::Receiver<RenderMessage>,
     trace_rx: mpsc::UnboundedReceiver<RenderMessage>,
     shutdown_rx: watch::Receiver<bool>,
+    tick_duration: u64,
     screen: Screen,
 }
 impl Renderer {
@@ -98,6 +109,7 @@ impl Renderer {
             render_rx: game_rx,
             trace_rx: deb_rx,
             shutdown_rx: quit_rx,
+            tick_duration: RENDER_TICK_DURATION_IN_MILLIS,
             screen: Screen::new(),
         }
     }
@@ -110,10 +122,17 @@ impl Renderer {
 
     // get updates from Game channel & apply to display
     async fn recv_panel_updates(&mut self) -> std::io::Result<()> {
-        tracing::info!("Entering Renderer::recv_panel_updates() loop",);
-        // park until a message arrives on any channel, or shutdown signal
+        let mut interval = time::interval(Duration::from_millis(self.tick_duration));
+
+        tracing::info!(
+            "Entered Renderer::recv_panel_updates() with tick interval {}ms",
+            self.tick_duration
+        );
+
+        // redraw every tick, wait on messages received or shutdown signal
         loop {
             tokio::select! {
+                _ = interval.tick() => self.draw()?,
                 _ = self.shutdown_rx.changed() => break,
                 Some(msg) = self.render_rx.recv() => { self.apply(msg) }
                 Some(msg) = self.trace_rx.recv() => { self.apply(msg) }
@@ -139,13 +158,31 @@ impl Renderer {
             RenderMessage::Panel(update) => {
                 if let Some(panel) = self.screen.panel_mut(update.target) {
                     match update.op {
-                        PanelOp::Append(t) => panel.text.push_str(&t),
-                        PanelOp::Replace(t) => panel.text = t,
-                        PanelOp::Clear => panel.text.clear(),
+                        PanelOps::Game(game_op) => self.update_board(game_op),
+                        PanelOps::Text(text_op) => {
+                            if let PanelContent::Text(s) = &mut panel.content {
+                                match text_op {
+                                    TextPanelOp::Append(t) => {
+                                        s.push_str(&t);
+                                    }
+                                    TextPanelOp::Replace(t) => {
+                                        s.replace_range(.., &t);
+                                    }
+                                    TextPanelOp::Clear => {
+                                        s.clear();
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+
+    // update or clear the game board panel (but don't draw)
+    fn update_board(&mut self, op: GamePanelOp) {
+        todo!();
     }
 
     // draw the current screen as supplied by render()
@@ -188,25 +225,41 @@ fn render(frame: &mut Frame, screen: &Screen) {
             PanelKind::Debug => screen_layout[1],
         };
 
-        // log panels follow their tail; the board renders from the top
-        let scroll_y = match panel.panel_kind {
-            PanelKind::Debug => {
-                let total_lines = panel.text.lines().count() as u16;
-                let inner_height = area.height.saturating_sub(2);
-                total_lines.saturating_sub(inner_height)
-            }
-            PanelKind::Game | PanelKind::Status => 0,
-        };
+        match &panel.content {
+            PanelContent::Text(s) => {
+                // the Debug panel follows its tail, the others render from the top (for now)
+                let scroll_y = match panel.panel_kind {
+                    PanelKind::Debug | PanelKind::Status => {
+                        let total_lines = s.lines().count() as u16;
+                        let inner_height = area.height.saturating_sub(2);
+                        total_lines.saturating_sub(inner_height)
+                    }
+                    PanelKind::Game => 0,
+                };
 
-        let widget = Paragraph::new(panel.text.as_str())
-            .scroll((scroll_y, 0))
-            .block(
-                Block::new()
+                // create Debug & Status Paragraph widgets
+                let widget = Paragraph::new(s.as_str()).scroll((scroll_y, 0)).block(
+                    Block::new()
+                        .borders(Borders::ALL)
+                        .border_style(Style::default().fg(panel.border_color))
+                        .title(panel.title.as_str())
+                        .border_type(BorderType::Rounded),
+                );
+                frame.render_widget(widget, area);
+            }
+            PanelContent::Board(snapshot) => {
+                // draw borders & title
+                let border = Block::new()
                     .borders(Borders::ALL)
                     .border_style(Style::default().fg(panel.border_color))
                     .title(panel.title.as_str())
-                    .border_type(BorderType::Rounded),
-            );
-        frame.render_widget(widget, area);
+                    .border_type(BorderType::Rounded);
+                frame.render_widget(border, area);
+
+                // draw the game board using GameDisplay
+                let game_display = GameDisplay::new(&snapshot);
+                game_display.render(frame, area);
+            }
+        }
     }
 }

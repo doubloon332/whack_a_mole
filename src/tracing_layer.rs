@@ -1,6 +1,6 @@
 // layer to send traces to Debug panel
 
-use crate::message_format::{PanelKind, PanelOp, PanelUpdate, RenderMessage};
+use crate::message_format::{PanelKind, PanelOps, PanelUpdate, RenderMessage, TextPanelOp};
 
 use tokio::sync::mpsc;
 use tracing_subscriber::Layer;
@@ -33,7 +33,11 @@ where
 
         let msg = RenderMessage::Panel(PanelUpdate {
             target: PanelKind::Debug,
-            op: PanelOp::Append(format!("{}: {}\n", Local::now().time(), visitor.message)),
+            op: PanelOps::Text(TextPanelOp::Append(format!(
+                "{}: {}\n",
+                Local::now().time(),
+                visitor.message
+            ))),
         });
 
         let _ = self.event_tx.send(msg);
