@@ -1,3 +1,4 @@
 target/debug/*
 claude_logs/*
 .vscode
+.vscode/*
