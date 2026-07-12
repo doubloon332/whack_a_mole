@@ -1,0 +1,1272 @@
+  2026-07-08T21:41:32.480513Z  INFO  2026-07-08 17:41:32.480132 -04:00: *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-08T21:41:32.480820Z  INFO  2026-07-08 17:41:32.480742 -04:00: Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:60 on ThreadId(1)
+
+  2026-07-08T21:41:32.480859Z  INFO  2026-07-08 17:41:32.480856 -04:00: Initialized game with 4 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-08T21:41:32.480923Z  INFO  2026-07-08 17:41:32.480920 -04:00: Spawned game task
+    at src/main.rs:72 on ThreadId(1)
+
+  2026-07-08T21:41:32.480962Z  INFO  2026-07-08 17:41:32.480959 -04:00: Spawned renderer task
+    at src/main.rs:74 on ThreadId(1)
+
+  2026-07-08T21:41:32.481172Z  INFO  2026-07-08 17:41:32.480993 -04:00: Entered Game::run() with tick interval 50ms
+    at src/game.rs:50 on ThreadId(12)
+
+  2026-07-08T21:41:32.481265Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T21:41:32.481423Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T21:41:32.487102Z  INFO  2026-07-08 17:41:32.487059 -04:00: Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:117 on ThreadId(11)
+
+  2026-07-08T21:55:38.584365Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-08T21:55:38.585127Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-08T21:55:38.585168Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-08T21:55:38.585249Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-08T21:55:38.585313Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-08T21:55:38.585323Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(4)
+
+  2026-07-08T21:55:38.585491Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-08T21:55:38.585553Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-08T21:55:38.589519Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:113 on ThreadId(12)
+
+  2026-07-08T22:03:27.101840Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-08T22:03:27.102523Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-08T22:03:27.102539Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-08T22:03:27.102582Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-08T22:03:27.102597Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-08T22:03:27.102606Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-08T22:03:27.102751Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T22:03:27.102812Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T22:03:27.105381Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:113 on ThreadId(10)
+
+  2026-07-08T22:03:47.179533Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-08T22:03:47.185775Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-08T22:03:47.185844Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-08T22:03:47.185946Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-08T22:03:47.185982Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-08T22:03:47.185985Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-08T22:03:47.186236Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T22:03:47.186361Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-08T22:03:47.191793Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:113 on ThreadId(11)
+
+  2026-07-08T22:59:59.353294Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-08T22:59:59.354245Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-08T22:59:59.354282Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-08T22:59:59.354326Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-08T22:59:59.354342Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-08T22:59:59.354356Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(11)
+
+  2026-07-08T22:59:59.354503Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-08T22:59:59.354563Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-08T22:59:59.357139Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:113 on ThreadId(10)
+
+  2026-07-09T20:32:04.689205Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T20:32:04.690246Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T20:32:04.690296Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T20:32:04.690353Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T20:32:04.690382Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T20:32:04.690409Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(13)
+
+  2026-07-09T20:32:04.690705Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-09T20:32:04.690836Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-09T20:32:38.425708Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T20:32:38.426091Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T20:32:38.426112Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T20:32:38.426144Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T20:32:38.426158Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T20:32:38.426181Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(11)
+
+  2026-07-09T20:32:38.426287Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-09T20:32:38.426344Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-09T20:32:38.428562Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:115 on ThreadId(10)
+
+  2026-07-09T22:20:50.928926Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T22:20:50.929746Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T22:20:50.929761Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T22:20:50.929790Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T22:20:50.929804Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T22:20:50.929830Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-09T22:20:50.929966Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T22:20:50.930080Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T22:20:50.933064Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:117 on ThreadId(13)
+
+  2026-07-09T22:48:38.419447Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T22:48:38.420505Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T22:48:38.420523Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T22:48:38.420557Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T22:48:38.420573Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T22:48:38.420595Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(13)
+
+  2026-07-09T22:48:38.420792Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-09T22:48:38.420853Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-09T22:48:38.425553Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:117 on ThreadId(11)
+
+  2026-07-09T22:51:32.553107Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T22:51:32.553660Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T22:51:32.553677Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T22:51:32.553714Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T22:51:32.553730Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T22:51:32.553768Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-09T22:51:32.553909Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T22:51:32.553963Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T22:51:32.559595Z  INFO  Entering Renderer::recv_panel_updates() loop
+    at src/renderer.rs:117 on ThreadId(11)
+
+  2026-07-09T23:07:08.580193Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T23:07:08.581190Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T23:07:08.581249Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T23:07:08.581336Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T23:07:08.581365Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T23:07:08.581399Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-09T23:07:08.581639Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T23:07:08.581705Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T23:07:08.586233Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(10)
+
+  2026-07-09T23:12:32.133967Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-09T23:12:32.134864Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-09T23:12:32.134882Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-09T23:12:32.134927Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-09T23:12:32.134944Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-09T23:12:32.134965Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-09T23:12:32.135119Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T23:12:32.135165Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-09T23:12:32.138113Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(13)
+
+  2026-07-10T00:53:03.088708Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-10T00:53:03.089604Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-10T00:53:03.089626Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-10T00:53:03.089671Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-10T00:53:03.089686Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-10T00:53:03.089711Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(13)
+
+  2026-07-10T00:53:03.089861Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-10T00:53:03.089937Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-10T00:53:03.092781Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(12)
+
+  2026-07-10T13:26:26.605872Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-10T13:26:26.607781Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-10T13:26:26.607816Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-10T13:26:26.607883Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-10T13:26:26.607904Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-10T13:26:26.607940Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(13)
+
+  2026-07-10T13:26:26.608100Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-10T13:26:26.608152Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-10T13:26:26.611064Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(11)
+
+  2026-07-10T13:29:03.581794Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-10T13:29:03.582356Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-10T13:29:03.582377Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-10T13:29:03.582440Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-10T13:29:03.582456Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-10T13:29:03.582489Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(11)
+
+  2026-07-10T13:29:03.582656Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-10T13:29:03.582723Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-10T13:29:03.588898Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(10)
+
+  2026-07-10T13:37:03.912359Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-10T13:37:03.912961Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-10T13:37:03.912980Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-10T13:37:03.913027Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-10T13:37:03.913042Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-10T13:37:03.913085Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-10T13:37:03.913225Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-10T13:37:03.913277Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-10T13:37:03.916155Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(11)
+
+  2026-07-10T13:49:55.113772Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-10T13:49:55.114629Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:57 on ThreadId(1)
+
+  2026-07-10T13:49:55.114709Z  INFO  Initialized game with 4 moles
+    at src/main.rs:61 on ThreadId(1)
+
+  2026-07-10T13:49:55.114799Z  INFO  Spawned game task
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-10T13:49:55.114833Z  INFO  Spawned renderer task
+    at src/main.rs:66 on ThreadId(1)
+
+  2026-07-10T13:49:55.114903Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:49 on ThreadId(12)
+
+  2026-07-10T13:49:55.115257Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-10T13:49:55.115393Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-10T13:49:55.122338Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:127 on ThreadId(11)
+
+  2026-07-12T20:24:34.913634Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:56 on ThreadId(1)
+
+  2026-07-12T20:24:34.914358Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:58 on ThreadId(1)
+
+  2026-07-12T20:24:34.914377Z  INFO  Initialized game with 8 moles
+    at src/main.rs:62 on ThreadId(1)
+
+  2026-07-12T20:24:34.914423Z  INFO  Spawned game task
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T20:24:34.914441Z  INFO  Spawned renderer task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T20:24:34.914474Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(6)
+
+  2026-07-12T20:24:34.914677Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(6)
+
+  2026-07-12T20:24:34.914728Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(6)
+
+  2026-07-12T20:24:34.917268Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(11)
+
+  2026-07-12T20:25:30.158366Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:56 on ThreadId(1)
+
+  2026-07-12T20:25:30.159260Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:58 on ThreadId(1)
+
+  2026-07-12T20:25:30.159344Z  INFO  Initialized game with 8 moles
+    at src/main.rs:62 on ThreadId(1)
+
+  2026-07-12T20:25:30.159401Z  INFO  Spawned game task
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T20:25:30.159457Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(13)
+
+  2026-07-12T20:25:30.159472Z  INFO  Spawned renderer task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T20:25:30.159716Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-12T20:25:30.159815Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-12T20:25:30.163057Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(12)
+
+  2026-07-12T20:26:01.136228Z  INFO  Increasing number of moles from 8 to 9
+    at src/game.rs:137 on ThreadId(10)
+
+  2026-07-12T20:26:01.136502Z  INFO  Generating 9 moles
+    at src/game.rs:170 on ThreadId(10)
+
+  2026-07-12T20:26:01.136537Z  INFO  Increasing number of holes from 8 to 9
+    at src/game.rs:144 on ThreadId(10)
+
+  2026-07-12T20:26:01.136556Z  INFO  Generating 9 holes
+    at src/game.rs:182 on ThreadId(10)
+
+  2026-07-12T20:26:01.136571Z  INFO  Square root of 9 is 3
+    at src/game.rs:192 on ThreadId(10)
+
+  2026-07-12T20:26:04.134965Z  INFO  Decreasing number of moles from 9 to 8
+    at src/game.rs:114 on ThreadId(10)
+
+  2026-07-12T20:26:04.135151Z  INFO  Generating 8 moles
+    at src/game.rs:170 on ThreadId(10)
+
+  2026-07-12T20:26:04.135179Z  INFO  Decreasing number of holes from 9 to 8
+    at src/game.rs:121 on ThreadId(10)
+
+  2026-07-12T20:26:04.135194Z  INFO  Generating 8 holes
+    at src/game.rs:182 on ThreadId(10)
+
+  2026-07-12T20:26:04.135207Z  INFO  Square root of 8 is 3
+    at src/game.rs:192 on ThreadId(10)
+
+  2026-07-12T20:26:41.034257Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:56 on ThreadId(1)
+
+  2026-07-12T20:26:41.034772Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:58 on ThreadId(1)
+
+  2026-07-12T20:26:41.034810Z  INFO  Initialized game with 8 moles
+    at src/main.rs:62 on ThreadId(1)
+
+  2026-07-12T20:26:41.034857Z  INFO  Spawned game task
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T20:26:41.034886Z  INFO  Spawned renderer task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T20:26:41.034927Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(13)
+
+  2026-07-12T20:26:41.035168Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-12T20:26:41.035256Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(13)
+
+  2026-07-12T20:26:41.041796Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(12)
+
+  2026-07-12T20:26:42.004058Z  INFO  Decreasing number of moles from 8 to 7
+    at src/game.rs:114 on ThreadId(13)
+
+  2026-07-12T20:26:42.004156Z  INFO  Generating 7 moles
+    at src/game.rs:170 on ThreadId(13)
+
+  2026-07-12T20:26:42.004182Z  INFO  Decreasing number of holes from 8 to 7
+    at src/game.rs:121 on ThreadId(13)
+
+  2026-07-12T20:26:42.004200Z  INFO  Generating 7 holes
+    at src/game.rs:182 on ThreadId(13)
+
+  2026-07-12T20:26:42.004216Z  INFO  Square root of 7 is 3
+    at src/game.rs:192 on ThreadId(13)
+
+  2026-07-12T20:26:48.341801Z  INFO  Increasing number of moles from 7 to 8
+    at src/game.rs:137 on ThreadId(12)
+
+  2026-07-12T20:26:48.341963Z  INFO  Generating 8 moles
+    at src/game.rs:170 on ThreadId(12)
+
+  2026-07-12T20:26:48.341992Z  INFO  Increasing number of holes from 7 to 8
+    at src/game.rs:144 on ThreadId(12)
+
+  2026-07-12T20:26:48.342007Z  INFO  Generating 8 holes
+    at src/game.rs:182 on ThreadId(12)
+
+  2026-07-12T20:26:48.342021Z  INFO  Square root of 8 is 3
+    at src/game.rs:192 on ThreadId(12)
+
+  2026-07-12T21:22:25.547426Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:56 on ThreadId(1)
+
+  2026-07-12T21:22:25.547995Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:58 on ThreadId(1)
+
+  2026-07-12T21:22:25.548016Z  INFO  Initialized game with 8 moles
+    at src/main.rs:62 on ThreadId(1)
+
+  2026-07-12T21:22:25.548048Z  INFO  Spawned game task
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T21:22:25.548075Z  INFO  Spawned renderer task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T21:22:25.548076Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(11)
+
+  2026-07-12T21:22:25.548401Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-12T21:22:25.548527Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-12T21:22:25.551219Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(10)
+
+  2026-07-12T21:22:31.464480Z  INFO  Decreasing number of moles from 8 to 7
+    at src/game.rs:114 on ThreadId(3)
+
+  2026-07-12T21:22:31.464711Z  INFO  Generating 7 moles
+    at src/game.rs:170 on ThreadId(3)
+
+  2026-07-12T21:22:31.464748Z  INFO  Decreasing number of holes from 8 to 7
+    at src/game.rs:121 on ThreadId(3)
+
+  2026-07-12T21:22:31.464764Z  INFO  Generating 7 holes
+    at src/game.rs:182 on ThreadId(3)
+
+  2026-07-12T21:22:31.464777Z  INFO  Assigned hole #0to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464789Z  INFO  Assigned hole #1to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464803Z  INFO  Assigned hole #2to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464815Z  INFO  Assigned hole #3to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464826Z  INFO  Assigned hole #4to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464836Z  INFO  Assigned hole #5to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:22:31.464846Z  INFO  Assigned hole #6to x/y position 0/0
+    at src/game.rs:203 on ThreadId(3)
+
+  2026-07-12T21:23:10.420212Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:56 on ThreadId(1)
+
+  2026-07-12T21:23:10.421054Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:58 on ThreadId(1)
+
+  2026-07-12T21:23:10.421118Z  INFO  Initialized game with 8 moles
+    at src/main.rs:62 on ThreadId(1)
+
+  2026-07-12T21:23:10.421192Z  INFO  Spawned game task
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T21:23:10.421344Z  INFO  Spawned renderer task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T21:23:10.421317Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(12)
+
+  2026-07-12T21:23:10.421729Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T21:23:10.421866Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T21:23:10.428899Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(11)
+
+  2026-07-12T21:23:11.977019Z  INFO  Decreasing number of moles from 8 to 7
+    at src/game.rs:114 on ThreadId(10)
+
+  2026-07-12T21:23:11.977321Z  INFO  Generating 7 moles
+    at src/game.rs:170 on ThreadId(10)
+
+  2026-07-12T21:23:11.977364Z  INFO  Decreasing number of holes from 8 to 7
+    at src/game.rs:121 on ThreadId(10)
+
+  2026-07-12T21:23:11.977382Z  INFO  Generating 7 holes
+    at src/game.rs:182 on ThreadId(10)
+
+  2026-07-12T21:23:11.977396Z  INFO  Assigned hole #0 to x/y position 1/0
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977409Z  INFO  Assigned hole #1 to x/y position 2/0
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977422Z  INFO  Assigned hole #2 to x/y position 0/1
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977434Z  INFO  Assigned hole #3 to x/y position 1/1
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977448Z  INFO  Assigned hole #4 to x/y position 0/2
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977462Z  INFO  Assigned hole #5 to x/y position 1/2
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:23:11.977475Z  INFO  Assigned hole #6 to x/y position 2/2
+    at src/game.rs:205 on ThreadId(10)
+
+  2026-07-12T21:25:14.901193Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T21:25:14.901925Z  INFO  Generating 8 moles
+    at src/game.rs:170 on ThreadId(1)
+
+  2026-07-12T21:25:14.901972Z  INFO  Generating 8 holes
+    at src/game.rs:182 on ThreadId(1)
+
+  2026-07-12T21:25:14.901998Z  INFO  Assigned hole #0 to x/y position 1/0
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902040Z  INFO  Assigned hole #1 to x/y position 2/0
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902059Z  INFO  Assigned hole #2 to x/y position 0/1
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902077Z  INFO  Assigned hole #3 to x/y position 1/1
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902098Z  INFO  Assigned hole #4 to x/y position 0/2
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902153Z  INFO  Assigned hole #5 to x/y position 1/2
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902209Z  INFO  Assigned hole #6 to x/y position 2/2
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.902235Z  INFO  Assigned hole #7 to x/y position 0/3
+    at src/game.rs:205 on ThreadId(1)
+
+  2026-07-12T21:25:14.903534Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:63 on ThreadId(1)
+
+  2026-07-12T21:25:14.903574Z  INFO  Initialized game with 8 moles
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-12T21:25:14.903626Z  INFO  Spawned game task
+    at src/main.rs:67 on ThreadId(1)
+
+  2026-07-12T21:25:14.903665Z  INFO  Spawned renderer task
+    at src/main.rs:69 on ThreadId(1)
+
+  2026-07-12T21:25:14.903705Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:63 on ThreadId(12)
+
+  2026-07-12T21:25:14.904029Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T21:25:14.904127Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T21:25:14.910277Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(10)
+
+  2026-07-12T23:25:23.810415Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:25:23.811280Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:25:23.811368Z  INFO  Generating 8 moles
+    at src/game.rs:226 on ThreadId(1)
+
+  2026-07-12T23:25:23.811398Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:267 on ThreadId(1)
+
+  2026-07-12T23:25:46.124741Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:25:46.125184Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:25:46.125247Z  INFO  Generating 8 moles
+    at src/game.rs:226 on ThreadId(1)
+
+  2026-07-12T23:25:46.125276Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:267 on ThreadId(1)
+
+  2026-07-12T23:25:46.125919Z  INFO  Generating 8 holes
+    at src/game.rs:232 on ThreadId(1)
+
+  2026-07-12T23:25:46.125983Z  INFO  Assigned hole #0 to x/y position 1/0
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126008Z  INFO  Assigned hole #1 to x/y position 2/0
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126029Z  INFO  Assigned hole #2 to x/y position 0/1
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126049Z  INFO  Assigned hole #3 to x/y position 1/1
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126069Z  INFO  Assigned hole #4 to x/y position 0/2
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126089Z  INFO  Assigned hole #5 to x/y position 1/2
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126109Z  INFO  Assigned hole #6 to x/y position 2/2
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.126129Z  INFO  Assigned hole #7 to x/y position 0/3
+    at src/game.rs:256 on ThreadId(1)
+
+  2026-07-12T23:25:46.127269Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:25:46.127371Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:25:46.127426Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:72 on ThreadId(4)
+
+  2026-07-12T23:25:46.127441Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:25:46.127744Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-12T23:25:46.127856Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-12T23:25:46.135261Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(11)
+
+  2026-07-12T23:33:52.858318Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:33:52.858992Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:33:52.859062Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:33:52.859092Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:33:52.859892Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:33:52.859980Z  INFO  Assigned hole #0 to x/y position 1/0
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860010Z  INFO  Assigned hole #1 to x/y position 2/0
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860034Z  INFO  Assigned hole #2 to x/y position 0/1
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860058Z  INFO  Assigned hole #3 to x/y position 1/1
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860083Z  INFO  Assigned hole #4 to x/y position 0/2
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860104Z  INFO  Assigned hole #5 to x/y position 1/2
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860124Z  INFO  Assigned hole #6 to x/y position 2/2
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.860144Z  INFO  Assigned hole #7 to x/y position 0/3
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:33:52.861228Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:33:52.861307Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:33:52.861375Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:33:52.861376Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(8)
+
+  2026-07-12T23:33:52.861777Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(8)
+
+  2026-07-12T23:33:52.861902Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(8)
+
+  2026-07-12T23:33:52.866422Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(6)
+
+  2026-07-12T23:34:58.692188Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:34:58.692657Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:34:58.692734Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:34:58.692763Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:34:58.693640Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:34:58.693694Z  INFO  Assigned hole #0 to x/y position 1/0
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693717Z  INFO  Assigned hole #1 to x/y position 2/0
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693758Z  INFO  Assigned hole #2 to x/y position 3/0
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693777Z  INFO  Assigned hole #3 to x/y position 0/1
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693795Z  INFO  Assigned hole #4 to x/y position 1/1
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693812Z  INFO  Assigned hole #5 to x/y position 2/1
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693830Z  INFO  Assigned hole #6 to x/y position 0/2
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.693847Z  INFO  Assigned hole #7 to x/y position 1/2
+    at src/game.rs:266 on ThreadId(1)
+
+  2026-07-12T23:34:58.695307Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:34:58.695421Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:34:58.695519Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:34:58.695507Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(12)
+
+  2026-07-12T23:34:58.695989Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T23:34:58.696175Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(12)
+
+  2026-07-12T23:34:58.702568Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(11)
+
+  2026-07-12T23:37:24.805234Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:37:24.805685Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:37:24.805762Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:37:24.805805Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:37:24.806794Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:37:24.806857Z  INFO  Assigned hole #0 to x/y position 0/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.806882Z  INFO  Assigned hole #1 to x/y position 1/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.806905Z  INFO  Assigned hole #2 to x/y position 2/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.806926Z  INFO  Assigned hole #3 to x/y position 3/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.806947Z  INFO  Assigned hole #4 to x/y position 0/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.807008Z  INFO  Assigned hole #5 to x/y position 1/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.807029Z  INFO  Assigned hole #6 to x/y position 2/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.807049Z  INFO  Assigned hole #7 to x/y position 0/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:24.808187Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:37:24.808251Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:37:24.808300Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:37:24.808297Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(9)
+
+  2026-07-12T23:37:24.808470Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(9)
+
+  2026-07-12T23:37:24.808532Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(9)
+
+  2026-07-12T23:37:24.811224Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(7)
+
+  2026-07-12T23:37:43.107458Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:37:43.108296Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:37:43.108377Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:37:43.108407Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:37:43.109060Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:37:43.109110Z  INFO  Assigned hole #0 to x/y position 0/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109122Z  INFO  Assigned hole #1 to x/y position 1/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109132Z  INFO  Assigned hole #2 to x/y position 2/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109141Z  INFO  Assigned hole #3 to x/y position 0/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109149Z  INFO  Assigned hole #4 to x/y position 1/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109158Z  INFO  Assigned hole #5 to x/y position 0/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109167Z  INFO  Assigned hole #6 to x/y position 1/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109176Z  INFO  Assigned hole #7 to x/y position 2/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:37:43.109673Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:37:43.109716Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:37:43.109730Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:37:43.109747Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(11)
+
+  2026-07-12T23:37:43.109912Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-12T23:37:43.109970Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(11)
+
+  2026-07-12T23:37:43.115527Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(10)
+
+  2026-07-12T23:38:08.916956Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:38:08.917410Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:38:08.917475Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:38:08.917505Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:38:08.918419Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:38:08.918549Z DEBUG  Assigned hole #0 to x/y position 0/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918567Z DEBUG  Assigned hole #1 to x/y position 1/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918581Z DEBUG  Assigned hole #2 to x/y position 2/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918591Z DEBUG  Assigned hole #3 to x/y position 0/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918605Z DEBUG  Assigned hole #4 to x/y position 1/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918615Z DEBUG  Assigned hole #5 to x/y position 0/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918625Z DEBUG  Assigned hole #6 to x/y position 1/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.918635Z DEBUG  Assigned hole #7 to x/y position 2/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:38:08.919192Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:38:08.919243Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:38:08.919261Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:38:08.919282Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(4)
+
+  2026-07-12T23:38:08.919441Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-12T23:38:08.919492Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(4)
+
+  2026-07-12T23:38:08.924773Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(11)
+
+  2026-07-12T23:38:35.275354Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:38:35.275862Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:38:35.275934Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:38:35.275965Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:38:35.276857Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:38:35.277986Z  INFO  Initialized game with 8 moles
+    at src/main.rs:65 on ThreadId(1)
+
+  2026-07-12T23:38:35.278122Z  INFO  Spawned game task
+    at src/main.rs:68 on ThreadId(1)
+
+  2026-07-12T23:38:35.278203Z  INFO  Spawned renderer task
+    at src/main.rs:70 on ThreadId(1)
+
+  2026-07-12T23:38:35.278199Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(10)
+
+  2026-07-12T23:38:35.278679Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(10)
+
+  2026-07-12T23:38:35.278783Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(10)
+
+  2026-07-12T23:38:35.285755Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(13)
+
+  2026-07-12T23:40:00.224322Z  INFO  Started tracing with logging to logs/mole_trace.log
+    at src/main.rs:50 on ThreadId(1)
+
+  2026-07-12T23:40:00.224823Z  INFO  *********** New Whack A Mole game run started ***********
+    at src/main.rs:55 on ThreadId(1)
+
+  2026-07-12T23:40:00.224925Z  INFO  Generating 8 moles
+    at src/game.rs:236 on ThreadId(1)
+
+  2026-07-12T23:40:00.224956Z  INFO  Reading mole names from file ./mole_names.txt
+    at src/game.rs:277 on ThreadId(1)
+
+  2026-07-12T23:40:00.225502Z  INFO  Generating 8 holes
+    at src/game.rs:242 on ThreadId(1)
+
+  2026-07-12T23:40:00.225524Z DEBUG  Assigned hole #0 to x/y position 0/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225534Z DEBUG  Assigned hole #1 to x/y position 1/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225542Z DEBUG  Assigned hole #2 to x/y position 2/0
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225550Z DEBUG  Assigned hole #3 to x/y position 0/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225558Z DEBUG  Assigned hole #4 to x/y position 1/1
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225566Z DEBUG  Assigned hole #5 to x/y position 0/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225574Z DEBUG  Assigned hole #6 to x/y position 1/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225581Z DEBUG  Assigned hole #7 to x/y position 2/2
+    at src/game.rs:255 on ThreadId(1)
+
+  2026-07-12T23:40:00.225588Z  INFO  Init: Naming 8 moles from pool of 1000 names and 8 holes
+    at src/game.rs:70 on ThreadId(1)
+
+  2026-07-12T23:40:00.225604Z  INFO  Naming 8 moles and assigning them to holes
+    at src/game.rs:183 on ThreadId(1)
+
+  2026-07-12T23:40:00.225656Z DEBUG  Assigned mole Jerry to hole at x/y 1/2
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225665Z DEBUG  Assigned mole Harold to hole at x/y 2/2
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225674Z DEBUG  Assigned mole Roy to hole at x/y 1/1
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225682Z DEBUG  Assigned mole Bobby to hole at x/y 0/1
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225691Z DEBUG  Assigned mole Austin to hole at x/y 1/0
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225698Z DEBUG  Assigned mole Steven to hole at x/y 0/0
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225705Z DEBUG  Assigned mole Danielle to hole at x/y 0/2
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225713Z DEBUG  Assigned mole Richard to hole at x/y 2/0
+    at src/game.rs:203 on ThreadId(1)
+
+  2026-07-12T23:40:00.225720Z  INFO  Initialized game with 8 moles and 8 holes
+    at src/main.rs:64 on ThreadId(1)
+
+  2026-07-12T23:40:00.226216Z  INFO  Spawned game task
+    at src/main.rs:73 on ThreadId(1)
+
+  2026-07-12T23:40:00.226236Z  INFO  Spawned renderer task
+    at src/main.rs:75 on ThreadId(1)
+
+  2026-07-12T23:40:00.226253Z  INFO  Entered Game::run() with tick interval 50ms
+    at src/game.rs:82 on ThreadId(5)
+
+  2026-07-12T23:40:00.226384Z TRACE  registering event source with poller: token=Token(0), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(5)
+
+  2026-07-12T23:40:00.226441Z TRACE  registering event source with poller: token=Token(1), interests=READABLE
+    at /Users/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/mio-1.2.1/src/poll.rs:578 on ThreadId(5)
+
+  2026-07-12T23:40:00.230462Z  INFO  Entered Renderer::recv_panel_updates() with tick interval 17ms
+    at src/renderer.rs:130 on ThreadId(4)
+
