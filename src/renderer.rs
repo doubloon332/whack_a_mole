@@ -49,7 +49,10 @@ impl Default for Screen {
                 Panel {
                     panel_kind: PanelKind::Game,
                     title: String::from("Garden"),
-                    content: PanelContent::Board(BoardSnapshot { moles: vec![] }),
+                    content: PanelContent::Board(BoardSnapshot {
+                        moles: vec![],
+                        num_moles: 0,
+                    }),
                     border_color: Color::Green,
                 },
                 Panel {
@@ -158,7 +161,15 @@ impl Renderer {
             RenderMessage::Panel(update) => {
                 if let Some(panel) = self.screen.panel_mut(update.target) {
                     match update.op {
-                        PanelOps::Game(game_op) => self.update_board(game_op),
+                        // PanelOps::Game(game_op) => self.update_board(game_op),
+                        PanelOps::Game(game_op) => {
+                            if let PanelContent::Board(board) = &mut panel.content {
+                                match game_op {
+                                    GamePanelOp::Replace(snap) => *board = snap,
+                                    GamePanelOp::Clear => board.moles.clear(),
+                                }
+                            }
+                        }
                         PanelOps::Text(text_op) => {
                             if let PanelContent::Text(s) = &mut panel.content {
                                 match text_op {
@@ -178,11 +189,6 @@ impl Renderer {
                 }
             }
         }
-    }
-
-    // update or clear the game board panel (but don't draw)
-    fn update_board(&mut self, op: GamePanelOp) {
-        todo!();
     }
 
     // draw the current screen as supplied by render()
@@ -218,6 +224,7 @@ fn render(frame: &mut Frame, screen: &Screen) {
         ])
         .split(screen_layout[0]);
 
+    // determine where to draw each panel
     for panel in &screen.panels {
         let area = match panel.panel_kind {
             PanelKind::Game => game_layout[0],
@@ -257,8 +264,8 @@ fn render(frame: &mut Frame, screen: &Screen) {
                 frame.render_widget(border, area);
 
                 // draw the game board using GameDisplay
-                let game_display = GameDisplay::new(&snapshot);
-                game_display.render(frame, area);
+                let game_display = GameDisplay::new();
+                game_display.render(frame, area, &snapshot);
             }
         }
     }

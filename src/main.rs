@@ -3,6 +3,7 @@
 mod game;
 mod game_board;
 mod game_display;
+mod hole;
 mod message_format;
 mod mole;
 mod renderer;
@@ -26,15 +27,9 @@ const LOG_FILENAME: &str = "mole_trace.log";
 #[tokio::main]
 // return type is an Error sink that can accept almost all errors from deeper in the code
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // set up async channels
-    let (game_tx, renderer_rx) = mpsc::channel(DISPLAY_CHANNEL_CAPACITY);
+    // set up tracing
     // for sending traces to the debug panel
     let (trace_debug_tx, trace_debug_rx) = mpsc::unbounded_channel();
-    // dedicated channel for signaling shutdown
-    let (shutdown_tx, shutdown_rx) = watch::channel(false);
-
-    let game = Game::new(game_tx, shutdown_tx);
-    let renderer = Renderer::new(renderer_rx, trace_debug_rx, shutdown_rx);
     let tracing_layer = TracingLayer::new(trace_debug_tx);
 
     // construct a subscriber registry to allow for layers (top level, debug panel output)
@@ -52,13 +47,27 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with(tracing_layer)
         .init(); // make this the global default
 
-    tracing::info!("*********** New Whack A Mole game run started ***********",);
-
     tracing::info!(
         "Started tracing with logging to {}",
         [LOG_PATH, LOG_FILENAME].concat()
     );
-    tracing::info!("Initialized game with {} moles", game.num_moles);
+
+    tracing::info!("*********** New Whack A Mole game run started ***********",);
+
+    // set up async channels
+    let (game_tx, renderer_rx) = mpsc::channel(DISPLAY_CHANNEL_CAPACITY);
+    // dedicated channel for signaling shutdown
+    let (shutdown_tx, shutdown_rx) = watch::channel(false);
+
+    let mut game = Game::new(game_tx, shutdown_tx);
+    game.init();
+    tracing::info!(
+        "Initialized game with {} moles and {} holes",
+        game.num_moles,
+        game.num_holes
+    );
+
+    let renderer = Renderer::new(renderer_rx, trace_debug_rx, shutdown_rx);
 
     let game_task = tokio::spawn(game.run());
     tracing::info!("Spawned game task");

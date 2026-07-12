@@ -26,6 +26,7 @@ pub enum PanelContent {
 // game board updates from Game -> Renderer
 pub struct BoardSnapshot {
     pub moles: Vec<Mole>,
+    pub num_moles: u32,
 }
 
 #[derive(Debug)]
