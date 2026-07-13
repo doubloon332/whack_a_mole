@@ -136,14 +136,14 @@ impl Game {
                         self.num_moles - 1
                     );
                     self.num_moles -= 1;
-                    self.moles = init_moles(self.num_moles);
+                    self.init();
                     tracing::info!(
                         "Decreasing number of holes from {} to {}",
                         self.num_holes,
                         self.num_holes - 1
                     );
                     self.num_holes -= 1;
-                    self.holes = init_holes(self.num_holes);
+                    self.init();
                 } else {
                     tracing::info!(
                         "Tried to decrease number of moles but already at {} minimum!",
@@ -173,6 +173,7 @@ impl Game {
                         MAX_MOLES
                     )
                 }
+                self.name_and_assign_moles();
             }
             _ => {}
         }
