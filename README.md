@@ -1,0 +1,1 @@
+A TUI Whack-A-Mole game using asynchronous techniques for game loop, state management, animation, etc. Project for learning Rust - all hand-coded, with tutoring assistance from Claude (e.g. advice on making code more idiomatic).
